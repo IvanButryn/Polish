@@ -1,0 +1,7 @@
+.all {
+    background-image: url(img/background.webp);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+}
