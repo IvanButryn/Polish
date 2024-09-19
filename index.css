@@ -1,7 +1,47 @@
+html, body {
+    height: 100%; /* Встановлює висоту html і body на 100% від висоти вікна */
+    margin: 0;
+    padding: 0;
+}
+
 .all {
     background-image: url(img/background.webp);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Забезпечує мінімальну висоту сторінки на весь екран */
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.description, .plans-description, .important-phrase {
+    flex-grow: 1; /* Розтягує секції по висоті */
+}
+
+.backpack-without-background, .books-without-background {
+    width: 150px;
+    height: auto; /* Щоб уникнути жорсткого обмеження висоти */
+    padding: 0;
+}
+
+.main-description {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.plans-description-list, .important-phrase-title-list {
+    padding-bottom: 50px;
+}
+
+.plans-description-list {
+    list-style-type: none;
 }
