@@ -1,5 +1,5 @@
 html, body {
-    height: 100%; /* Встановлює висоту html і body на 100% від висоти вікна */
+    height: 100%; 
     margin: 0;
     padding: 0;
 }
@@ -11,7 +11,7 @@ html, body {
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Забезпечує мінімальну висоту сторінки на весь екран */
+    min-height: 100vh; 
     margin: 0;
     padding: 0;
 }
@@ -24,12 +24,12 @@ html, body {
 }
 
 .description, .plans-description, .important-phrase {
-    flex-grow: 1; /* Розтягує секції по висоті */
+    flex-grow: 1; 
 }
 
 .backpack-without-background, .books-without-background {
     width: 150px;
-    height: auto; /* Щоб уникнути жорсткого обмеження висоти */
+    height: auto; 
     padding: 0;
 }
 
@@ -38,10 +38,24 @@ html, body {
     padding-top: 40px;
 }
 
-.plans-description-list, .important-phrase-title-list {
-    padding-bottom: 50px;
-}
-
-.plans-description-list {
-    list-style-type: none;
-}
+.accordion-content {
+    text-align: center;
+    display: none;
+    padding: 10px;
+    background-color: transparent;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  
+  .accordion-header.active {
+    background-color: transparent;
+  }
+  
