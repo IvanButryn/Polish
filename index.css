@@ -2,6 +2,8 @@ html, body {
     height: 100%; 
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: #f5f5f5;
 }
 
 .all {
@@ -9,53 +11,216 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    padding: 20px;
 }
 
 .title {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Montserrat", sans-serif;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.description, .plans-description, .important-phrase {
-    flex-grow: 1; 
-}
-
-.backpack-without-background, .books-without-background {
-    width: 150px;
-    height: auto; 
-    padding: 0;
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 .main-description {
+    display: flex;
+    flex-direction: row;
     text-align: center;
-    padding-top: 40px;
+    padding: 20px;
+    font-size: 1.1rem;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
-.accordion-content {
+.first-image, .second-image {
+    margin: 0;
     text-align: center;
-    display: none;
-    padding: 10px;
-    background-color: transparent;
-  }
-  
-  .accordion-header {
+}
+
+.backpack-without-background, .books-without-background {
+    width: 300px;
+    height: auto; 
+    box-shadow: none;
+    border-radius: 8px;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.accordion-header {
     width: 100%;
     text-align: center;
-    padding: 10px;
-    background-color: transparent;
+    padding: 15px;
+    background-color: #f0f0f0;
     cursor: pointer;
     border: none;
     outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  .accordion-header.active {
-    background-color: transparent;
-  }
+.accordion-header.active {
+    background-color: #e6e6e6;
+}
   
+.accordion-header::after {
+    content: '▼';
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+  
+.accordion-header.active::after {
+    transform: rotate(180deg);
+}
+  
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content p {
+    padding: 20px;
+    margin: 0;
+}
+
+.important-phrase {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.important-phrase-title {
+    font-size: 1.5rem;
+    color: #d9534f;
+    text-align: center;
+}
+
+.important-phrase-title-list {
+    padding: 0;
+    margin: 20px 0;
+}
+
+.important-phrase-title-list li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    list-style: none;
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+}
+
+.important-phrase-title-list li::before {
+    content: '•';
+    color: #d9534f;
+    padding-right: 8px;
+}
+
+/* Медіа-запити для адаптації */
+
+@media (max-width: 768px) {
+    .all {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .main-description {
+        padding: 30px 15px;
+        font-size: 1rem;
+    }
+
+    .backpack-without-background, .books-without-background {
+        width: 150px;
+    }
+
+    .accordion-header {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .accordion-content p {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .important-phrase-title {
+        font-size: 1.3rem;
+    }
+
+    .important-phrase-title-list li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .main-description {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    .backpack-without-background, .books-without-background {
+        width: 120px;
+    }
+
+    .accordion-header {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .accordion-content p {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+
+    .important-phrase-title {
+        font-size: 1.2rem;
+    }
+
+    .important-phrase-title-list li {
+        font-size: 0.8rem;
+    }
+}
